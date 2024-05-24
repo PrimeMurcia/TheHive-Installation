@@ -178,5 +178,5 @@ systemctl status elasticsearch
 
 Access TheHive on port 9000 with the following credentials:
 
-- ** Username: admin@thehive.local
-- ** Password: secret
+- Username: admin@thehive.local
+- Password: secret
