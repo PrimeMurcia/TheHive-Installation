@@ -1,9 +1,13 @@
-# TheHive Installation Guide
+--------------------------------------------------------------
+                      TheHive 5 Installation Guide
+--------------------------------------------------------------
 
-This guide provides step-by-step instructions to install TheHive on your system. Follow the steps below to set up TheHive along with its dependencies.
+1. **System Requirements:**
+    - RAM: 8GB+ (16GB recommended)
+    - HDD: 50GB+
+    - OS: Ubuntu 22.04 LTS
 
-## Step 1: Download Dependencies
+2. **Installation Steps:**
 
-First, install the necessary dependencies:
-
-
+   ```bash
+   sudo su
