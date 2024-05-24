@@ -94,13 +94,13 @@ rpc_address: your ip address
 
 Save and exit.
 
-### 6. Install TheHive
+Restart Cassandra:
 
 ```bash
-wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
-echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
-sudo apt-get update
-sudo apt-get install -y thehive
+systemctl stop cassandra.service
+rm -rf /var/lib/cassandra/*
+systemctl start cassandra.service
+systemctl status cassandra.service
 ```
 
 
