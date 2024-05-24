@@ -104,12 +104,31 @@ systemctl status cassandra.service
 ```
 
 
-### 6. Install TheHive
+### 8. Configure ElasticSearch
+
+Edit the elasticsearch.yml file:
 
 ```bash
-wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
-echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
-sudo apt-get update
-sudo apt-get install -y thehive
+nano /etc/elasticsearch/elasticsearch.yml
 ```
+
+Set the following configurations:
+
+```bash
+cluster.name: thehive
+node.name: node-1
+network.host: your ip address
+http.port: 9200
+cluster.initial_master_nodes: ["node-1"]
+```
+Save and exit.
+
+Start and enable ElasticSearch:
+
+```bash
+systemctl start elasticsearch
+systemctl enable elasticsearch
+systemctl status elasticsearch
+```
+
 
