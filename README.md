@@ -57,10 +57,14 @@ sudo apt install elasticsearch
 ```
 
 
-### 2. Install Dependencies
+### Optional: Configure ElasticSearch
+
+Create a jvm.options file under /etc/elasticsearch/jvm.options.d and add the following configurations:
 
 ```bash
-apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl software-properties-common python3-pip lsb-release
+-Dlog4j2.formatMsgNoLookups=true
+-Xms2g
+-Xmx2g
 ```
 
 ### 2. Install Dependencies
