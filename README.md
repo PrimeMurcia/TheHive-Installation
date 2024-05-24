@@ -75,3 +75,41 @@ echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https:/
 sudo apt-get update
 sudo apt-get install -y thehive
 ```
+
+### 7. Configure Cassandra
+Edit the cassandra.yaml file:
+
+```bash
+nano /etc/cassandra/cassandra.yaml
+```
+
+Set the following configurations:
+
+```bash
+cluster_name: 'your cluster name'  # e.g., PrimeSOC Project
+listen_address: your ip address
+rpc_address: your ip address
+-seed: "your ip address:7000"
+```
+
+Save and exit.
+
+### 6. Install TheHive
+
+```bash
+wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+sudo apt-get update
+sudo apt-get install -y thehive
+```
+
+
+### 6. Install TheHive
+
+```bash
+wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+sudo apt-get update
+sudo apt-get install -y thehive
+```
+
