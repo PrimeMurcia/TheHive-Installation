@@ -67,8 +67,11 @@ Create a jvm.options file under /etc/elasticsearch/jvm.options.d and add the fol
 -Xmx2g
 ```
 
-### 2. Install Dependencies
+### 6. Install TheHive
 
 ```bash
-apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl software-properties-common python3-pip lsb-release
+wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+sudo apt-get update
+sudo apt-get install -y thehive
 ```
