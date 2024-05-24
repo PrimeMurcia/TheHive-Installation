@@ -131,4 +131,52 @@ systemctl enable elasticsearch
 systemctl status elasticsearch
 ```
 
+### 9. Configure TheHive
 
+Edit the permissions for /opt/thp:
+
+```bash
+chown -R thehive:thehive /opt/thp
+ls -la /opt/thp
+```
+
+Edit TheHive configuration file:
+
+```bash
+nano /etc/thehive/application.conf
+```
+
+Set the following configurations:
+
+```bash
+hostname = ["your ip address"]
+cluster-name = "your cluster name"  # e.g., PrimeSOC Project
+application.baseUrl = "http://your ip address:9000"
+```
+
+Save and exit.
+
+Start and enable TheHive:
+
+```bash
+systemctl start thehive
+systemctl enable thehive
+systemctl status thehive
+```
+
+### 10. Verify All Services
+
+Check the status of all services:
+
+```bash
+systemctl status thehive
+systemctl status cassandra.service
+systemctl status elasticsearch
+```
+
+## Default Credentials
+
+Access TheHive on port 9000 with the following credentials:
+
+- ** Username: admin@thehive.local
+- ** Password: secret
