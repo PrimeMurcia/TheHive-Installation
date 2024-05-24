@@ -10,10 +10,8 @@
 ## Installing TheHive 5
 
 ### 1. Switch to Root User
-``bash
-sudo su``
+```sudo su```
 
 
 ### 2. Install Dependencies
-``bash
-apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl software-properties-common python3-pip lsb-release``
+```apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl software-properties-common python3-pip lsb-release```
